@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Örneği</title>
+  <style>
+    /* Stil düzenlemeleri burada yapılabilir */
+  </style>
+</head>
+<body>
+  <h2>Form Örneği</h2>
+  <form onsubmit="return validateForm()">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required><br><br>
+
+    <label for="ad">Ad:</label>
+    <input type="text" id="ad" name="ad" required><br><br>
+
+    <label for="soyad">Soyad:</label>
+    <input type="text" id="soyad" name="soyad" required><br><br>
+
+    <label for="adres">Adres:</label>
+    <textarea id="adres" name="adres" required></textarea><br><br>
+
+    <label for="sehir">Şehir:</label>
+    <select id="sehir" name="sehir" required>
+      <option value="">Seçiniz</option>
+      <option value="istanbul">İstanbul</option>
+      <option value="ankara">Ankara</option>
+      <option value="izmir">İzmir</option>
+      <!-- Diğer seçenekleri buraya ekleyebilirsiniz -->
+    </select><br><br>
+
+    <label for="robot">Robot Değilim:</label>
+    <input type="checkbox" id="robot" name="robot" required><br><br>
+
+    <label for="cinsiyet">Cinsiyet:</label>
+    <input type="radio" id="kadin" name="cinsiyet" value="kadin" required>
+    <label for="kadin">Kadın</label>
+    <input type="radio" id="erkek" name="cinsiyet" value="erkek" required>
+    <label for="erkek">Erkek</label><br><br>
+
+    <input type="submit" value="Gönder">
+    <input type="reset" value="Temizle">
+  </form>
+
+  <script>
+    function validateForm() {
+      var emailInput = document.getElementById("email");
+      var email = emailInput.value;
+      var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+      if (!emailRegex.test(email)) {
+        alert("Lütfen geçerli bir email adresi girin.");
+        emailInput.focus();
+        return false;
+      }
+      
+      // Diğer alanların doğrulamasını buraya ekleyebilirsiniz
+
+      return true;
+    }
+  </script>
+</body>
+</html>
