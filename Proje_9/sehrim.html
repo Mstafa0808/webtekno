@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şehrim</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+	body {
+      padding-top: 60px;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .nav-link {
+      padding: 0.5rem 1rem;
+      margin: 0 0.2rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .nav-link:hover {
+      background-color: #f8f9fa;
+    }
+    .nav-link.hakkimda {
+      background-color: #28a745;
+      color: white;
+    }
+    .nav-link.sehrim {
+      background-color: #007bff;
+      color: white;
+    }
+    .nav-link.mirasimiz {
+      background-color: #dc3545;
+      color: white;
+    }
+    .nav-link.egitim {
+      background-color: #ffc107;
+      color: white;
+    }
+    .nav-link.ilgialanim {
+      background-color: #17a2b8;
+      color: white;
+    }
+    .nav-link.iletisim {
+      background-color: #6c757d;
+      color: white;
+    }
+	#currentPage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #D2B48C;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      font-weight: bold;
+    }
+	.carousel-item img {
+      width: 100%;
+      height: auto;
+    }
+        #yazi1{
+            background-color:lightblue;
+            color:#180000;
+            border: width 0px;
+            width: 70%;
+            height: auto;
+            font-family:"Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;
+            margin:  50px auto ;
+            padding: 70px 60px;
+        }
+        #yazi2{
+            background-color:#FFDAB9;
+            color:#180000;
+            border: width 0px;
+            width: 70%;
+            height: auto;
+            font-family:"Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;
+            margin:  50px auto ;
+            padding: 70px 60px;
+        }
+        #yazi3{
+            background-color:lightgray;
+            color:#180000;
+            border: width 0px;
+            width: 70%;
+            height: auto;
+            font-family:"Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;
+            margin:  50px auto ;
+            padding: 70px 60px;
+        }
+        #yazi4{
+            background-color:lightgreen;
+            color:#180000;
+            border: width 0px;
+            width: 70%;
+            height: auto;
+            font-family:"Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;
+            margin:  50px auto ;
+            padding: 70px 60px;
+        }
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="hakkimda.html">Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link hakkimda" href="hakkimda.html">Hakkımda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link sehrim" href="sehrim.html">Şehrim</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mirasimiz" href="mirasimiz.html">Mirasımız</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link egitim" href="egitim.html">Eğitim</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ilgialanim" href="ilgialanim.html">İlgi Alanım</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link iletisim" href="iletisim.html">İletişim</a>
+            </li>
+        </ul>
+    </div>
+    <span id="currentPage"></span>
+</nav>
+
+<div class="container">
+    <div id="mySlider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#mySlider" data-slide-to="0" class="active"></li>
+      <li data-target="#mySlider" data-slide-to="1"></li>
+      <li data-target="#mySlider" data-slide-to="2"></li>
+      <li data-target="#mySlider" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+		<a href="#yazi1">
+        <img class="d-block w-100" src="Sakarya_Nehri.jpg" alt="Resim 1">
+      </a>
+        <div class="carousel-caption">
+          <h3>Başlık 1</h3>
+          <p>Açıklama 1</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+		<a href="#yazi2">
+        <img class="d-block w-100" src="60c2955517aca90e644bbffe.webp" alt="Resim 2">
+      </a>
+        <div class="carousel-caption">
+          <h3>Başlık 2</h3>
+          <p>Açıklama 2</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+		<a href="#yazi3">
+        <img class="d-block w-100" src="pasalar_new01.jpg" alt="Resim 3">
+      </a>
+        <div class="carousel-caption">
+          <h3>Başlık 3</h3>
+          <p>Açıklama 3</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+		<a href="#yazi4">
+        <img class="d-block w-100" src="3484240_810x458.jpg" alt="Resim 4">
+      </a>
+        <div class="carousel-caption">
+          <h3>Başlık 4</h3>
+          <p>Açıklama 4</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#mySlider" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#mySlider" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+    <article id="yazi1">
+        <header>
+            <h5>
+                Sakarya nehri
+            </h5>
+        </header>
+        <section>
+            <p>Sakarya Nehri Kızılırmak ve Fırat nehirlerinden sonra Türkiye'nin üçüncü en uzun, Kuzeybatı Anadolu'nun ise en büyük akarsuyudur. Nehir, ismini Yunan Mitolojisi'ndeki nehir tanrısı Sangarius'dan almaktadır.</p>
+        </section>
+        <section>
+            <p>Uzunluğu 824 km olup, beslenme havzasının genişliği 58.160 km², havzaya yıllık düşen yağış miktarı 31.057 milyar m³'dür.Sakarya Nehri havzasını Kızılırmak, Batı Karadeniz, Gediz, Konya kapalı havzası, Marmara, Akarçay ve Susurluk havzaları tarafından kuşatılmıştır.Sakarya nehri havzasında şu dokuz ilin toprakları bulunmaktadır: Sakarya, Bolu, Ankara, Eskişehir, Bilecik, Bursa, Kütahya, Konya, Afyon. Sakarya nehrinin kolları: Porsuk Çayı, Ankara Çayı, Mudurnu Çayı, Koca Çay, Kirmir Çayı, Çark Suyu ve Darıçay Deresi'dir.Nehrin bir kolu Afyon'un kuzeydoğusundaki Bayat Yaylası'ndan, diğeri Eskişehir Çifteler Sakaryabaşından doğar.Önce İç Anadolu Bölgesi'ne doğru akar sonra Kızılırmak'ın tersine bir kıvrımla, kuzeye döner, Polatlı yakınlarında en büyük kollarından biri olan Porsuk Çayı'nı ve Ankara Çayı'nı alır. Geyve Boğazı'ndan geçer ve Karasu'dan akarak Karadeniz'e dökülür.</p>
+        </section>
+        <img src="TR_Sakarya_asv2021-10_img28_Sakarya_River.jpg" style="height: 520px;">
+    </article>
+    <article id="yazi2">
+        <header>
+            <h5>
+                Sapanca Gölü
+            </h5>
+        </header>
+        <section>
+            <p>Sapanca Gölü, Türkiye'nin Sakarya ve Kocaeli illerinde yer alan bir göldür. Arifiye, Sapanca, Serdivan ve Kartepe ilçelerinin sınırları içerisindedir.</p>
+        </section>
+        <section>
+            <p>Doğusunda yer alan Sakarya Nehri ve batısındaki İzmit Körfezi arasında, deniz seviyesinden 33 m yükseklikte yer alan gölün uzunluğu, doğu-batı doğrultusunda 16 km, eni ise kuzey-güney doğrultusunda 5 km.dir</p>
+        </section>
+        <section>
+            <p>Gölün uzun dönem ortalama yüzölçümü 46,9 km²’dir ve su havzasının alanı da 296 km² olarak hesaplanmıştır.Gölün derinliği en çok 61 m'dir. Göl merkezinde 40–50 m derinliğinde bir düzlük bulunur. 50 m ve 60 m izobatları dar alan kaplar[1]. Göl tabanı kuzeydoğu ve batıda yükselir. Göl tabanı kuzeyden, güneyden ve güneydoğudan fay kontrollü sarp çanak duvarları ile çevrilidir.</p>
+        </section>
+        <section>
+            <p>Sapanca Gölü’nün hacmi 1,7 km³dür. Ortalama derinlik 36 m'dir. Gölün seviyesi denizden 33 m yüksektir. Çanağın en çukur yeri deniz seviyesinden 28 m daha aşağıda yer alır [3]. Göl seviyesinin değişiminde depremlerinde etkisinin bulunduğu tespit edilmiştir. En büyük seviye değişimi 1967 Mudurnu Depremi sonrası hesaplanmıştır. </p>
+        </section>
+        <section>
+            <p>Sapanca Gölü, dağlardan inen küçük derelerin dibindeki kaynaklardan beslenmektedir. Sapanca Gölü’nün güney kıyısındaki dereler, doğudan batıya doğru; Arifiye, Keçi (Kuruçeşme), İstanbul, Mahmudiye, Kurtköy, Yanık, Kuruçay ile kuzey kısmındaki dereler ise Cehennem, Aygır, Altıkuruş, Çakalöldü Maden, Kuru, Liman, Eşme, Fındık, Tuzla, Çiftepınar, Balıkhane dereleridir. </p>
+        </section>
+        <img src="60c2955517aca90e644bbffe.webp" style="height: 520px;">
+    </article>
+    <article id="yazi3">
+        <header>
+            <h5>
+                Paşalar kalesi
+            </h5>
+        </header>
+        <article>
+            <p>Pamukova Paşalar Mahallesinde bulunan ve mahalle ile aynı ismi taşıyan Paşalar Kalesi ( Karaceyş Kalesi ) Bizans döneminden kalma olup 1314 yılında Osman Gazi döneminde fethedilmiştir. Kalenin yapım tarihi kitabesi olmadığından tam olarak bilinmemektedir. Geyve’den Mekece’ye kadar uzanan Pamukova ve Geyve ovalarını adeta kuşbakışı gören Paşalar Kalesinin yapım tekniği ve sur duvarlarında kullanılan geç Roma dönemi mezar stelleri ile mimari parçaların devşirme malzeme olarak kullanılmış olması Bizans dönemi yapısı olduğunu göstermektedir. Ayrıca; Paşalar Mahallesinde Karaca Ahmet Sultan Türbesi ve Camisi de bulunmaktadır.</p>
+        </article>
+        <img src="pasalar_new01.jpg" style="height: 520px;">
+    </article>
+    <article id="yazi4">
+        <header>
+            <h5>
+                Harmantepe kalesi
+            </h5>
+        </header>
+        <section>
+            <p>Pamukova Paşalar Mahallesinde bulunan ve mahalle ile aynı ismi taşıyan Paşalar Kalesi ( Karaceyş Kalesi ) Bizans döneminden kalma olup 1314 yılında Osman Gazi döneminde fethedilmiştir. Kalenin yapım tarihi kitabesi olmadığından tam olarak bilinmemektedir. Geyve’den Mekece’ye kadar uzanan Pamukova ve Geyve ovalarını adeta kuşbakışı gören Paşalar Kalesinin yapım tekniği ve sur duvarlarında kullanılan geç Roma dönemi mezar stelleri ile mimari parçaların devşirme malzeme olarak kullanılmış olması Bizans dönemi yapısı olduğunu göstermektedir. Ayrıca; Paşalar Mahallesinde Karaca Ahmet Sultan Türbesi ve Camisi de bulunmaktadır.</p>
+        </section>
+        <img src="download.jpg" style="height: 520px;">
+    </article>
+	
+	<script>
+    var currentPageElement = document.getElementById("currentPage");
+    var links = document.getElementsByClassName("nav-link");
+
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", function() {
+        var currentPage = this.innerText;
+        currentPageElement.innerText = currentPage;
+      });
+
+      // Aktif sayfayı belirlemek için kontrol yapısı eklendi
+      if (window.location.href.includes(links[i].getAttribute("href"))) {
+        links[i].classList.add("active");
+        currentPageElement.innerText = links[i].innerText;
+      }
+    }
+  </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
