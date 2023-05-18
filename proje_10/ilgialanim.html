@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlgi Alanlarım</title>
+	<style>
+    body {
+      padding-top: 60px;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .nav-link {
+      padding: 0.5rem 1rem;
+      margin: 0 0.2rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .nav-link:hover {
+      background-color: #f8f9fa;
+    }
+    .nav-link.hakkimda {
+      background-color: #28a745;
+      color: white;
+    }
+    .nav-link.sehrim {
+      background-color: #007bff;
+      color: white;
+    }
+    .nav-link.mirasimiz {
+      background-color: #dc3545;
+      color: white;
+    }
+    .nav-link.egitim {
+      background-color: #ffc107;
+      color: white;
+    }
+    .nav-link.ilgialanim {
+      background-color: #17a2b8;
+      color: white;
+    }
+    .nav-link.iletisim {
+      background-color: #6c757d;
+      color: white;
+    }
+	    .cat-photo {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .cat-photo:hover {
+      transform: scale(1.1);
+    }
+	#currentPage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #D2B48C;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      font-weight: bold;
+    }
+  </style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="hakkimda.html">Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link hakkimda" href="hakkimda.html">Hakkımda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sehrim" href="sehrim.html">Şehrim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mirasimiz" href="mirasimiz.html">Mirasımız</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link egitim" href="egitim.html">Eğitim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ilgialanim" href="ilgialanim.html">İlgi Alanım</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iletisim" href="iletisim.html">İletişim</a>
+        </li>
+      </ul>
+    </div>
+    <span id="currentPage"></span>
+  </nav>
+  
+  <div class="container">
+    <div class="row" id="catPhotos"></div>
+  </div>
+  
+  <script>
+    var currentPageElement = document.getElementById("currentPage");
+    var links = document.getElementsByClassName("nav-link");
+
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", function() {
+        var currentPage = this.innerText;
+        currentPageElement.innerText = currentPage;
+      });
+
+      // Aktif sayfayı belirlemek için kontrol yapısı eklendi
+      if (window.location.href.includes(links[i].getAttribute("href"))) {
+        links[i].classList.add("active");
+        currentPageElement.innerText = links[i].innerText;
+      }
+    }
+
+
+    var xhr = new XMLHttpRequest();
+    var url = 'https://api.thecatapi.com/v1/images/search?limit=8';
+
+    xhr.open('GET', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        var catPhotosDiv = document.getElementById('catPhotos');
+
+        response.slice(0, 8).forEach(function(cat) {
+          var col = document.createElement('div');
+          col.classList.add('col-sm-12', 'col-md-6', 'col-lg-3', 'mb-4');
+
+          var image = new Image();
+          image.src = cat.url;
+          image.classList.add('cat-photo');
+          col.appendChild(image);
+
+          catPhotosDiv.appendChild(col);
+        });
+      }
+    };
+
+    xhr.send();
+  </script>
+    
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+</body>
+</html>

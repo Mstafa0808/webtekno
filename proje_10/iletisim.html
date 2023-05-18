@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Örneği</title>
+  <style>
+  	body {
+      padding-top: 60px;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .nav-link {
+      padding: 0.5rem 1rem;
+      margin: 0 0.2rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .nav-link:hover {
+      background-color: #f8f9fa;
+    }
+    .nav-link.hakkimda {
+      background-color: #28a745;
+      color: white;
+    }
+    .nav-link.sehrim {
+      background-color: #007bff;
+      color: white;
+    }
+    .nav-link.mirasimiz {
+      background-color: #dc3545;
+      color: white;
+    }
+    .nav-link.egitim {
+      background-color: #ffc107;
+      color: white;
+    }
+    .nav-link.ilgialanim {
+      background-color: #17a2b8;
+      color: white;
+    }
+    .nav-link.iletisim {
+      background-color: #6c757d;
+      color: white;
+    }
+	#currentPage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #D2B48C;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      font-weight: bold;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('doğa.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(0,1px);
+    }
+
+    h2 {
+      text-align: center;
+	  color: #FF8000
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+	  color: #FF8000;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: #ff0000;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="hakkimda.html">Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link hakkimda" href="hakkimda.html">Hakkımda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sehrim" href="sehrim.html">Şehrim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mirasimiz" href="mirasimiz.html">Mirasımız</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link egitim" href="egitim.html">Eğitim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ilgialanim" href="ilgialanim.html">İlgi Alanım</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iletisim" href="iletisim.html">İletişim</a>
+        </li>
+      </ul>
+    </div>
+    <span id="currentPage"></span>
+  </nav>
+
+  <h2>Form Örneği</h2>
+  <form action="gonderilen-bilgiler.php" method="post" onsubmit="return validateForm()"><form action="gonderilen-bilgiler.php" method="post" onsubmit="return validateForm()">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br><br>
+
+    <label for="ad">Ad:</label>
+    <input type="text" id="ad" name="ad"><br><br>
+
+    <label for="soyad">Soyad:</label>
+    <input type="text" id="soyad" name="soyad"><br><br>
+
+    <label for="telefon">Telefon:</label>
+    <input type="tel" id="telefon" name="telefon" pattern="[0-9]{10}" placeholder="Örn: 5551234567" ><br><br>
+
+    <label for="adres">Adres:</label>
+    <textarea id="adres" name="adres"></textarea><br><br>
+
+    <label for="sehir">Şehir:</label>
+    <select id="sehir" name="sehir">
+      <option value="">Seçiniz</option>
+      <option value="istanbul">İstanbul</option>
+      <option value="ankara">Ankara</option>
+      <option value="izmir">İzmir</option>
+      <!-- Diğer seçenekleri buraya ekleyebilirsiniz -->
+    </select><br><br>
+
+    <label for="robot">Robot Değilim:</label>
+    <input type="checkbox" id="robot" name="robot"><br><br>
+
+    <label for="cinsiyet">Cinsiyet:</label>
+    <input type="radio" id="kadin" name="cinsiyet" value="kadin">
+    <label for="kadin">Kadın</label>
+    <input type="radio" id="erkek" name="cinsiyet" value="erkek">
+    <label for="erkek">Erkek</label><br><br>
+
+    <input type="submit" value="Gönder">
+    <input type="reset" value="Temizle">
+  </form>
+
+  <script>
+    function validateForm() {
+      var emailInput = document.getElementById("email");
+      var email = emailInput.value;
+      var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+      if (!emailRegex.test(email)) {
+        alert("Lütfen geçerli bir email adresi girin.");
+        emailInput.focus();
+        return false;
+      }
+
+      var telefonInput = document.getElementById("telefon");
+      var telefon = telefonInput.value;
+      var telefonRegex = /^\d{10}$/;
+
+      if (!telefonRegex.test(telefon)) {
+        alert("Lütfen geçerli bir telefon numarası girin. (10 haneli, sadece rakamlardan oluşmalı)");
+        telefonInput.focus();
+        return false;
+      }
+
+      var adInput = document.getElementById("ad");
+      var ad = adInput.value;
+	  if (ad.trim() === "") {
+        alert("Lütfen adınızı girin.");
+        adInput.focus();
+        return false;
+      }
+
+      var soyadInput = document.getElementById("soyad");
+      var soyad = soyadInput.value;
+
+      if (soyad.trim() === "") {
+        alert("Lütfen soyadınızı girin.");
+        soyadInput.focus();
+        return false;
+      }
+
+      var adresInput = document.getElementById("adres");
+      var adres = adresInput.value;
+
+      if (adres.trim() === "") {
+        alert("Lütfen adresinizi girin.");
+        adresInput.focus();
+        return false;
+      }
+
+      var sehirInput = document.getElementById("sehir");
+      var sehir = sehirInput.value;
+
+      if (sehir === "") {
+        alert("Lütfen bir şehir seçin.");
+        sehirInput.focus();
+        return false;
+      }
+
+      var robotInput = document.getElementById("robot");
+      if (!robotInput.checked) {
+        alert("Lütfen robot olmadığınızı onaylayın.");
+        return false;
+      }
+
+      var cinsiyetInputs = document.getElementsByName("cinsiyet");
+      var selectedCinsiyet = false;
+      for (var i = 0; i < cinsiyetInputs.length; i++) {
+        if (cinsiyetInputs[i].checked) {
+          selectedCinsiyet = true;
+          break;
+        }
+      }
+
+      if (!selectedCinsiyet) {
+        alert("Lütfen cinsiyetinizi seçin.");
+        return false;
+      }
+
+      // Diğer alanların doğrulamasını buraya ekleyebilirsiniz
+
+      return true;
+    }
+  </script>
+  
+  <script>
+    var currentPageElement = document.getElementById("currentPage");
+    var links = document.getElementsByClassName("nav-link");
+
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", function() {
+        var currentPage = this.innerText;
+        currentPageElement.innerText = currentPage;
+      });
+
+      // Aktif sayfayı belirlemek için kontrol yapısı eklendi
+      if (window.location.href.includes(links[i].getAttribute("href"))) {
+        links[i].classList.add("active");
+        currentPageElement.innerText = links[i].innerText;
+      }
+    }
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
