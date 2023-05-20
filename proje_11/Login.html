@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Sayfası</title>
+	<link rel="stylesheet" href="Login_style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <form method="POST" action="kontrol.php">
+        <label>Kullanıcı Adı (Öğrenci Numarası):</label>
+        <input type="text" name="username" id="username"><br><br>
+        <label>Şifre:</label>
+        <input type="password" name="password" id="password"><br><br>
+        <input type="button" value="Giriş" onclick="validateForm()">
+    </form>
+</div>
+
+<script src="Login_script.js"></script>
+
+</body>
+</html>

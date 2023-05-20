@@ -1,0 +1,98 @@
+	body {
+      padding-top: 60px;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .nav-link {
+      padding: 0.5rem 1rem;
+      margin: 0 0.2rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .nav-link:hover {
+      background-color: #f8f9fa;
+    }
+    .nav-link.hakkimda {
+      background-color: #28a745;
+      color: white;
+    }
+    .nav-link.sehrim {
+      background-color: #007bff;
+      color: white;
+    }
+    .nav-link.mirasimiz {
+      background-color: #dc3545;
+      color: white;
+    }
+    .nav-link.egitim {
+      background-color: #ffc107;
+      color: white;
+    }
+    .nav-link.ilgialanim {
+      background-color: #17a2b8;
+      color: white;
+    }
+    .nav-link.iletisim {
+      background-color: #6c757d;
+      color: white;
+    }
+	#currentPage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #D2B48C;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      font-weight: bold;
+    }
+	  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    display: none;
+	background-color: #FF8C00;
+  }
+  .scroll-to-top:hover {
+    background-color: #FFA500; 
+  }
+        p
+        {
+            font-family: Arial, sans-serif;
+			color: black;
+			background-color: #45a049;
+			margin: 0;
+			padding: 0;
+        }
+		.container {
+			max-width: 400px;
+			margin: 100px auto;
+			border-radius: 15px;
+			padding: 20px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+	.container {
+		background-color:gray;
+	}
+	
+	#yazi1 {
+		height: 250px;
+		margin: 0px 10px;
+	}
+	
+	#yazi2 {
+		height: 170px;
+		margin: 0px 10px;
+	}
+	
+	#yazi3 {
+		height: 230px;
+		margin: 0px 10px;
+	}

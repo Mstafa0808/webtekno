@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletisim</title>
+    <link rel="stylesheet" href="iletisim_style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="index.html">Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link hakkimda" href="index.html">Hakkımda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link sehrim" href="sehrim.html">Şehrim</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mirasimiz" href="mirasimiz.html">Mirasımız</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link egitim" href="egitim.html">Eğitim</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ilgialanim" href="ilgialanim.html">İlgi Alanım</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link iletisim" href="iletisim.html">İletişim</a>
+            </li>
+          </ul>
+        </div>
+        <span id="currentPage"></span>
+    </nav>
+
+    <h2>Form Örneği</h2>
+    <form action="gonbil.php" method="post" onsubmit="return validateForm()">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+
+        <label for="ad">Ad:</label>
+        <input type="text" id="ad" name="ad"><br><br>
+
+        <label for="soyad">Soyad:</label>
+        <input type="text" id="soyad" name="soyad"><br><br>
+
+        <label for="telefon">Telefon:</label>
+        <input type="tel" id="telefon" name="telefon" pattern="[0-9]{10}" placeholder="Örn: 5551234567"><br><br>
+
+        <label for="adres">Adres:</label>
+        <textarea id="adres" name="adres"></textarea><br><br>
+
+        <label for="sehir">Şehir:</label>
+        <select id="sehir" name="sehir">
+            <option value="">Seçiniz</option>
+            <option value="istanbul">İstanbul</option>
+            <option value="ankara">Ankara</option>
+            <option value="izmir">İzmir</option>
+        </select><br><br>
+
+        <label for="robot">Robot Değilim:</label>
+        <input type="checkbox" id="robot" name="robot"><br><br>
+
+        <label for="cinsiyet">Cinsiyet:</label>
+        <input type="radio" id="kadin" name="cinsiyet" value="kadin">
+        <label for="kadin">Kadın</label>
+        <input type="radio" id="erkek" name="cinsiyet" value="erkek">
+        <label for="erkek">Erkek</label><br><br>
+
+        <input type="submit" value="Gönder">
+        <input type="reset" value="Temizle">
+    </form>
+
+    <script src="iletisim_script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
